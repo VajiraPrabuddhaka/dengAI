@@ -1,4 +1,3 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
-submission.csv
-benchmark.csv
+data/submission_*
