@@ -15,6 +15,7 @@ import importlib
 _ = importlib.reload(myutil)
 
 dfx_train = myutil.get_indexed_dataset('data/dengue_features_train.csv')
+print (dfx_train)
 dfy_train = myutil.get_indexed_dataset('data/dengue_labels_train.csv')
 dfx_test = myutil.get_indexed_dataset('data/dengue_features_test.csv')
 # combine training features with training labels for data exploration later on
