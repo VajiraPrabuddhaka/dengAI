@@ -6,7 +6,7 @@ import numpy as np
 from scipy.interpolate import spline
 import pandas as pd
 
-dataset = pandas.read_csv('12:52PM on July 19, 2018.csv', engine='python')
+dataset = pandas.read_csv('02:57PM on July 19, 2018.csv', engine='python')
 old_data = pandas.read_csv('07:24PM on July 18, 2018.csv', engine='python', skipfooter=3)
 scaler = MinMaxScaler(feature_range=(0, 1))
 #dataset['total_cases'] = scaler.fit_transform(dataset['total_cases'])
@@ -23,7 +23,7 @@ iq_old, sj_old = split_dataset_by_city(old_data)
 T = np.array(sj.index)
 power = np.array(sj['total_cases'])
 
-xnew = np.linspace(T.min(),T.max(),50)
+xnew = np.linspace(T.min(),T.max(),20)
 
 
 
@@ -44,7 +44,7 @@ df_bbbb =   DataFrame(power_smooth_new)
 T = np.array(iq.index)
 power = np.array(iq['total_cases'])
 
-xnew = np.linspace(T.min(),T.max(),20)
+xnew = np.linspace(T.min(),T.max(),12)
 
 
 

@@ -164,7 +164,10 @@ def prep_regr_run(city_data):
 
     X_train, X_valid, y_train, y_valid = train_test_split(X, y, test_size=.33, random_state=42)
 
-    return X_train, X_valid, y_train, y_valid
+    X_train = X
+    y_train = y
+    #return X_train, X_valid, y_train, y_valid
+    return X, X_valid, y, y_valid
 
 
 def regr_run(nptrain, poly_degree=1, exploring=False):
@@ -179,7 +182,7 @@ def regr_run(nptrain, poly_degree=1, exploring=False):
     if exploring: print(X_train.shape, X_valid.shape, y_train.shape, y_valid.shape)
 
     # Create linear regression object
-    # regr = linear_model.LinearRegression()
+    #regr = linear_model.LinearRegression()
     # regr = linear_model.Ridge(alpha = .5)
     # regr = linear_model.RidgeCV(alphas=[0.1, 1.0, 10.0])
     # regr = linear_model.Lasso(alpha = .1)
@@ -188,7 +191,7 @@ def regr_run(nptrain, poly_degree=1, exploring=False):
     # regr = SVR(kernel='rbf', C=1e3, gamma=0.1)
     print("fuck")
     print(X_train.shape)
-    # regr = NegativeBinomial(y_train,X_train)
+    #regr = NegativeBinomial(y_train,X_train)
 
     # Train the model using the training sets
     regr.fit(X_train, y_train)
