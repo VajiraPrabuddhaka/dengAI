@@ -5,7 +5,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
-import statsmodels as stats
+# import statsmodels as stats
 from sklearn.model_selection import train_test_split
 from sklearn import datasets, linear_model
 from sklearn.metrics import mean_absolute_error, r2_score
@@ -13,7 +13,7 @@ from sklearn.preprocessing import PolynomialFeatures
 
 #%run /home/vajira/PycharmProjects/dengAI/notebooks/myutil_regr.py
 from sklearn.svm import SVR
-from statsmodels.discrete.discrete_model import NegativeBinomial
+# from statsmodels.discrete.discrete_model import NegativeBinomial
 import importlib
 from sklearn.preprocessing import MinMaxScaler
 
@@ -116,6 +116,13 @@ dftest_sj.drop('total_cases', axis=1, inplace=True)
 # preprocess train data
 
 def preprocess(df, timesteps=1):
+    ndvi_mean = df[['ndvi_nw', 'ndvi_ne', 'ndvi_se', 'ndvi_sw']].mean(axis=1)
+    df.drop(['ndvi_nw', 'ndvi_ne', 'ndvi_se', 'ndvi_sw', 'reanalysis_air_temp_k', 'reanalysis_dew_point_temp_k',
+                 'reanalysis_max_air_temp_k', 'reanalysis_min_air_temp_k', 
+                 'precipitation_amt_mm', 'reanalysis_relative_humidity_percent',
+                 'reanalysis_sat_precip_amt_mm'], axis=1, inplace=True)
+    df.insert(1, 'ndvi_mean', ndvi_mean)
+    print(df)
     # step 4: split array into features (starting at col 5) and labels
     X = df.values[:, :-1].astype('float32')
     y = df.values[:, -1].reshape(X.shape[0], 1)
@@ -238,7 +245,7 @@ def regr_predict_and_save(df_iq, model_iq, ts_iq, df_sj, model_sj, ts_sj, dftest
 
 periods_iq = 1   # best 12
 degree_iq = 1     # best 1
-print (dfall_iq)
+# print (dfall_iq)
 nptrain_iq = preprocess(dftrain_iq.copy(), periods_iq)
 regr_iq = regr_run(nptrain_iq, degree_iq, exploring=True)
 
