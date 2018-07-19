@@ -59,7 +59,7 @@ power_smooth_new = power_smooth_new.astype(int)
 df_bb = pd.concat([df_bbbb, DataFrame(power_smooth_new)])
 df_bb = df_bb.reset_index(drop=True)
 df_bb = df_bb.clip(lower=0)
-dataset.loc['total_cases'] = df_bb[0]
+dataset['total_cases'] = df_bb[0].values
 
 
 
