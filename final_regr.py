@@ -164,8 +164,6 @@ def prep_regr_run(city_data):
 
     X_train, X_valid, y_train, y_valid = train_test_split(X, y, test_size=.33, random_state=42)
 
-    X_train = X
-    y_train = y
     #return X_train, X_valid, y_train, y_valid
     return X, X_valid, y, y_valid
 
@@ -238,13 +236,13 @@ def regr_predict_and_save(df_iq, model_iq, ts_iq, df_sj, model_sj, ts_sj, dftest
     dfresults.to_csv(filename, index=False)
 
 
-periods_iq = 12   # best 12
+periods_iq = 1   # best 12
 degree_iq = 1     # best 1
 print (dfall_iq)
 nptrain_iq = preprocess(dftrain_iq.copy(), periods_iq)
 regr_iq = regr_run(nptrain_iq, degree_iq, exploring=True)
 
-periods_sj = 250   # best 250
+periods_sj = 1   # best 250
 degree_sj = 1      # best 1
 nptrain_sj = preprocess(dftrain_sj.copy(), periods_sj)
 regr_sj = regr_run(nptrain_sj, degree_sj, exploring=True)
