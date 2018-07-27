@@ -247,11 +247,13 @@ periods_iq = 1   # best 12
 degree_iq = 1     # best 1
 # print (dfall_iq)
 nptrain_iq = preprocess(dftrain_iq.copy(), periods_iq)
+dftest_iq = preprocess(dftest_iq.copy(), periods_iq)
 regr_iq = regr_run(nptrain_iq, degree_iq, exploring=True)
 
 periods_sj = 1   # best 250
 degree_sj = 1      # best 1
 nptrain_sj = preprocess(dftrain_sj.copy(), periods_sj)
+dftest_sj = preprocess(dftest_sj.copy(), periods_sj)
 regr_sj = regr_run(nptrain_sj, degree_sj, exploring=True)
 
 regr_predict_and_save(dftrain_iq, regr_iq, periods_iq, dftrain_sj, regr_sj, periods_sj, dftest_iq, dftest_sj,\

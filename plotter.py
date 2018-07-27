@@ -6,7 +6,7 @@ import numpy as np
 from scipy.interpolate import spline
 import pandas as pd
 
-dataset = pandas.read_csv('02:57PM on July 19, 2018.csv', engine='python')
+dataset = pandas.read_csv('04:36PM on July 19, 2018.csv', engine='python')
 old_data = pandas.read_csv('07:24PM on July 18, 2018.csv', engine='python', skipfooter=3)
 scaler = MinMaxScaler(feature_range=(0, 1))
 #dataset['total_cases'] = scaler.fit_transform(dataset['total_cases'])
@@ -37,6 +37,8 @@ power_smooth_new = power_smooth_new.astype(int)
 
 df_bbbb =   DataFrame(power_smooth_new)
 #df_bbbb = df_bbbb.clip(lower=0)
+
+plt.plot(xnew_new,power_smooth_new)
 
 
 #////////////////////////////////////////////////////
@@ -70,9 +72,9 @@ dataset['total_cases'] = df_bb[0].values
 #dataset.replace(dataset[dataset['city'] == 'sj']['total_cases'], df_bbbb[0])
 #plt.plot(sj_old['total_cases'])
 
-dataset.to_csv("sub.csv",index=False)
+dataset.to_csv("sub_t.csv",index=False)
 
 
-plt.plot(xnew_new,power_smooth_new)
+#plt.plot(xnew_new,power_smooth_new)
 
 plt.show()
