@@ -63,7 +63,7 @@ If you want to use ipython notebook
 ```angular2html
 final_regr.ipynb
 ```
-#### To run Time Series model
+#### To run Time Series prediction
 ```angular2html
 python3 prophet.py
 ```
