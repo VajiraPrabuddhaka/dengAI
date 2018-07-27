@@ -52,3 +52,18 @@ Please note that If you are willing to run `prophet.py` you should install proph
 $ pip install fbprophet
 ```
 For more details, refer to this: https://facebook.github.io/prophet/docs/installation.html
+
+### Do simple Inference
+
+#### To run Bayesian Ridge model
+```angular2html
+python3 final_regr.py
+```
+If you want to use ipython notebook
+```angular2html
+final_regr.ipynb
+```
+#### To run Time Series model
+```angular2html
+python3 prophet.py
+```
