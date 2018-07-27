@@ -67,3 +67,5 @@ final_regr.ipynb
 ```angular2html
 python3 prophet.py
 ```
+Note: Our final presentation can be found on `final_presentation.pdf`
+### Hope you enjoy well.... 
