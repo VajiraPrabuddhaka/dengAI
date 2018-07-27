@@ -46,3 +46,9 @@ scikit-learn toolkit for python
 Other python libraries like numpy, matplotlib(for visualizations), pandas, skimage etc..
 ``` 
 Please refer to the documentations of above tools and install latest versions that they supported. We recommand to install them in a seperate python virtual environment for convenience.
+Please note that If you are willing to run `prophet.py` you should install prophet library as follows.
+```angular2html
+# bash
+$ pip install fbprophet
+```
+For more details, refer to this: https://facebook.github.io/prophet/docs/installation.html
