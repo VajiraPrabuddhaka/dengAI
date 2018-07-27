@@ -4,7 +4,7 @@ Predicting Disease Spread
 Dengue fever is a mosquito-borne life threatening disease that occurs mostly in tropical and subtropical regions of the world. Since the disease is carried by mosquitoes, the transmission dynamics of dengue are related to climate variables such as temperature and precipitation which might help in reproduction of mosquitoes. Although the relation between those are complex and many researchers say that the climate change has a considerable effect on distributional shifts of reported cases. Therefore, if there is a way to estimate the relationship between dengue dynamics and climate changes, the research initiatives and resource allocation to help fight life-threatening pandemics can be improved. The main consideration of this project is to predict the possible number of dengue cases for San Juan, Puerto Rico and Iquitos in Peru using data mining aspects. This task is available as a data science competition in www.drivedata.org website.
 
 ## About data
-/data directory contains the data related to this model
+/data directory contains the data related to this model, followings are the attributes that they provided.
 
 
 1) San Juan as sj or Iquitos as iq 
@@ -32,3 +32,17 @@ Dengue fever is a mosquito-borne life threatening disease that occurs mostly in 
 23) station_max_temp_c : Maximum air temperature (GHCN)
 24) station_min_temp_c : Minimum air temperature (GHCN)
 25) station_precip_mm : Total precipitation (GHCN)
+
+## Getting Started..
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+```angular2html
+Linux pc with python3 installed 
+keras with Tensorflow backend
+scikit-learn toolkit for python
+Other python libraries like numpy, matplotlib(for visualizations), pandas, skimage etc..
+``` 
+Please refer to the documentations of above tools and install latest versions that they supported. We recommand to install them in a seperate python virtual environment for convenience.
